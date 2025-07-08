@@ -1,0 +1,93 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 31
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_BUILD_WITH_INSTALL_RPATH": "ON"
+      }
+    },
+    {
+      "name": "Debug",
+      "inherits": "default",
+      "displayName": "Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "Release",
+      "inherits": "default",
+      "displayName": "Release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "configurePreset": "Debug",
+      "name": "Debug"
+    },
+    {
+      "configurePreset": "Release",
+      "name": "Release"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "Debug",
+      "configurePreset": "Debug",
+      "output": {
+        "outputOnFailure": true
+      },
+      "execution": {
+        "noTestsAction": "error",
+        "stopOnFailure": true
+      }
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "Debug",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "Debug"
+        },
+        {
+          "type": "build",
+          "name": "Debug"
+        },
+        {
+          "type": "test",
+          "name": "Debug"
+        }
+      ]
+    },
+    {
+      "name": "Release",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "Release"
+        },
+        {
+          "type": "build",
+          "name": "Release"
+        }
+      ]
+    }
+  ]
+}

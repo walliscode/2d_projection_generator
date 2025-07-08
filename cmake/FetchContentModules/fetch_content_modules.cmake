@@ -1,0 +1,2 @@
+include(SFML)
+include(happly)

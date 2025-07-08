@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION ${CMAKE_VERSION}) # this file comes with cmake
+
+message(VERBOSE "Executing update step for happly")
+
+block(SCOPE_FOR VARIABLES)
+
+include("/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/CMakeFiles/fc-tmp/happly/happly-gitupdate.cmake")
+
+endblock()
