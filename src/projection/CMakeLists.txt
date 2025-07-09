@@ -15,5 +15,6 @@ target_link_libraries(projections
 PUBLIC
 SFML::Graphics
 structures
+glm::glm
 
 )

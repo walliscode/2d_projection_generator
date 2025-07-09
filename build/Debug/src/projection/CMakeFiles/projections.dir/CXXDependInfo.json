@@ -17,6 +17,7 @@
 		"/home/bwallis/projects/walliscode/2d_projection_generator/src/projection",
 		"/home/bwallis/projects/walliscode/2d_projection_generator/src/structures",
 		"/home/bwallis/projects/walliscode/2d_projection_generator/include/happly",
+		"_deps/glm-src",
 		"_deps/sfml-src/include"
 	],
 	"language" : "CXX",

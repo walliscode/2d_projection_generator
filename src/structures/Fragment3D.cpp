@@ -7,9 +7,11 @@
 /// Headers
 /////////////////////////////////////////////////
 #include "Fragment3D.h"
+#include "glm/ext/vector_float3.hpp"
 #include "happly.h"
 #include <SFML/System/Vector3.hpp>
 #include <array>
+#include <cwchar>
 #include <vector>
 
 namespace projection_generator {
@@ -28,8 +30,8 @@ void Fragment3D::ConfigureFromPlyFile(happly::PLYData &data) {
   // for each vertex, extract the position and color
   for (size_t i = 0; i < numVertices; ++i) {
 
-    sf::Vector3f position(vertex_positions[i][0], vertex_positions[i][1],
-                          vertex_positions[i][2]);
+    glm::vec3 position(vertex_positions[i][0], vertex_positions[i][1],
+                       vertex_positions[i][2]);
     sf::Color color(vertex_colors[i][0], vertex_colors[i][1],
                     vertex_colors[i][2]);
 
@@ -57,5 +59,10 @@ void Fragment3D::ConfigureFromPlyFile(happly::PLYData &data) {
     m_triangles.push_back({face[0], face[1], face[2]});
     m_triangles.push_back({face[0], face[2], face[3]});
   }
+}
+
+/////////////////////////////////////////////////
+const std::vector<Vertex3> &Fragment3D::GetVertices() const {
+  return m_vertices;
 }
 } // namespace projection_generator

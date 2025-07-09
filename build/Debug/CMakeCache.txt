@@ -101,7 +101,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_EXPORT_BUILD_DATABASE:BOOL=
 
 //No help, variable specified on the command line.
-CMAKE_EXPORT_COMPILE_COMMANDS:UNINITIALIZED=ON
+CMAKE_EXPORT_COMPILE_COMMANDS:UNINITIALIZED=1
 
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/CMakeFiles/pkgRedirects
@@ -296,6 +296,10 @@ FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
 FETCHCONTENT_QUIET:BOOL=ON
 
 //When not empty, overrides where to find pre-populated content
+// for glm
+FETCHCONTENT_SOURCE_DIR_GLM:PATH=
+
+//When not empty, overrides where to find pre-populated content
 // for happly
 FETCHCONTENT_SOURCE_DIR_HAPPLY:PATH=
 
@@ -305,6 +309,9 @@ FETCHCONTENT_SOURCE_DIR_SFML:PATH=
 
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of glm
+FETCHCONTENT_UPDATES_DISCONNECTED_GLM:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of happly
 FETCHCONTENT_UPDATES_DISCONNECTED_HAPPLY:BOOL=OFF
@@ -341,6 +348,63 @@ Fontconfig_LIBRARY:FILEPATH=/usr/lib/libfontconfig.so
 
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
+
+//Generate the install target
+GLM_BUILD_INSTALL:BOOL=OFF
+
+//Build dynamic/static library
+GLM_BUILD_LIBRARY:BOOL=ON
+
+//Build the test programs
+GLM_BUILD_TESTS:BOOL=OFF
+
+//Disable platform, compiler, arch and C++ language detection
+GLM_DISABLE_AUTO_DETECTION:BOOL=OFF
+
+//Enable C++ 11
+GLM_ENABLE_CXX_11:BOOL=OFF
+
+//Enable C++ 14
+GLM_ENABLE_CXX_14:BOOL=OFF
+
+//Enable C++ 17
+GLM_ENABLE_CXX_17:BOOL=OFF
+
+//Enable C++ 20
+GLM_ENABLE_CXX_20:BOOL=OFF
+
+//Enable C++ 98
+GLM_ENABLE_CXX_98:BOOL=OFF
+
+//Enable fast math optimizations
+GLM_ENABLE_FAST_MATH:BOOL=OFF
+
+//Enable language extensions
+GLM_ENABLE_LANG_EXTENSIONS:BOOL=OFF
+
+//Enable AVX optimizations
+GLM_ENABLE_SIMD_AVX:BOOL=OFF
+
+//Enable AVX2 optimizations
+GLM_ENABLE_SIMD_AVX2:BOOL=OFF
+
+//Enable SSE2 optimizations
+GLM_ENABLE_SIMD_SSE2:BOOL=OFF
+
+//Enable SSE3 optimizations
+GLM_ENABLE_SIMD_SSE3:BOOL=OFF
+
+//Enable SSE 4.1 optimizations
+GLM_ENABLE_SIMD_SSE4_1:BOOL=OFF
+
+//Enable SSE 4.2 optimizations
+GLM_ENABLE_SIMD_SSE4_2:BOOL=OFF
+
+//Enable SSSE3 optimizations
+GLM_ENABLE_SIMD_SSSE3:BOOL=OFF
+
+//Force 'pure' instructions
+GLM_FORCE_PURE:BOOL=OFF
 
 //Path to a file.
 OGG_INCLUDE_DIR:PATH=/usr/include
@@ -880,6 +944,15 @@ X11_xkbfile_INCLUDE_PATH:PATH=/usr/include
 //Path to a library.
 X11_xkbfile_LIB:FILEPATH=/usr/lib/libxkbfile.so
 
+//Value Computed by CMake
+glm_BINARY_DIR:STATIC=/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build
+
+//Value Computed by CMake
+glm_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+glm_SOURCE_DIR:STATIC=/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src
+
 //Path to a library.
 pkgcfg_lib_PKG_FONTCONFIG_fontconfig:FILEPATH=/usr/lib/libfontconfig.so
 
@@ -1048,7 +1121,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=13
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=15
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

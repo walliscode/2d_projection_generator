@@ -16,4 +16,5 @@ target_link_libraries(structures
 PUBLIC
 SFML::Graphics
 happly
+glm::glm
 )

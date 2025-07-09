@@ -9,6 +9,8 @@
 		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Network/cmake_install.cmake",
 		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Graphics/cmake_install.cmake",
 		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Audio/cmake_install.cmake",
+		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/cmake_install.cmake",
+		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/glm/cmake_install.cmake",
 		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/projection_generator/cmake_install.cmake",
 		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/cmake_install.cmake",
 		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/data_loader/cmake_install.cmake",

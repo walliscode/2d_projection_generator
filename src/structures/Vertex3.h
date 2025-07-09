@@ -4,6 +4,7 @@
 /////////////////////////////////////////////////
 
 #pragma once
+#include "glm/ext/vector_float3.hpp"
 #include <SFML/Graphics.hpp>
 
 namespace projection_generator {
@@ -19,12 +20,12 @@ struct Vertex3 {
   /// @param vector [TODO:parameter]
   /// @param color [TODO:parameter]
   /////////////////////////////////////////////////
-  Vertex3(sf::Vector3f vector, sf::Color color);
+  Vertex3(glm::vec3 position, sf::Color color);
 
   /////////////////////////////////////////////////
   /// @brief 3D vector representing the vertex position
   /////////////////////////////////////////////////
-  sf::Vector3f m_vector;
+  glm::vec3 m_position;
 
   /////////////////////////////////////////////////
   /// @brief Color of the vertex

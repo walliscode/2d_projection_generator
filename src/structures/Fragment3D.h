@@ -48,5 +48,7 @@ public:
   /// @param data [TODO:parameter]
   /////////////////////////////////////////////////
   Fragment3D(const happly::PLYData &data);
+
+  const std::vector<Vertex3> &GetVertices() const;
 };
 } // namespace projection_generator

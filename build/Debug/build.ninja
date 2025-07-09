@@ -1731,6 +1731,206 @@ build _deps/sfml-build/src/SFML/Audio/install/strip: phony _deps/sfml-build/src/
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
+# /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/glm.cmake
+# =============================================================================
+
+
+#############################################
+# Utility command for test
+
+build _deps/glm-build/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build && /opt/cmake/bin/ctest
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps/glm-build/test: phony _deps/glm-build/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/glm-build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build && /opt/cmake/bin/ccmake -S/home/bwallis/projects/walliscode/2d_projection_generator -B/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build _deps/glm-build/edit_cache: phony _deps/glm-build/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/glm-build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build && /opt/cmake/bin/cmake --regenerate-during-build -S/home/bwallis/projects/walliscode/2d_projection_generator -B/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/glm-build/rebuild_cache: phony _deps/glm-build/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/glm-build/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/glm-build/CMakeFiles/install.util: CUSTOM_COMMAND _deps/glm-build/all
+  COMMAND = cd /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build && /opt/cmake/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/glm-build/install: phony _deps/glm-build/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/glm-build/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/glm-build/all
+  COMMAND = cd /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build && /opt/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/glm-build/install/local: phony _deps/glm-build/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/glm-build/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/glm-build/all
+  COMMAND = cd /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build && /opt/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/glm-build/install/strip: phony _deps/glm-build/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target glm
+
+
+#############################################
+# Order-only phony target for glm
+
+build cmake_object_order_depends_target_glm: phony || .
+
+build _deps/glm-build/glm/CMakeFiles/glm.dir/detail/glm.cpp.o: CXX_COMPILER__glm_unscanned_Debug /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src/glm/detail/glm.cpp || cmake_object_order_depends_target_glm
+  CONFIG = Debug
+  DEP_FILE = _deps/glm-build/glm/CMakeFiles/glm.dir/detail/glm.cpp.o.d
+  FLAGS = -g -std=c++23 -Wno-c++98-compat -Wno-c++98-compat-pedantic
+  INCLUDES = -I/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src
+  OBJECT_DIR = _deps/glm-build/glm/CMakeFiles/glm.dir
+  OBJECT_FILE_DIR = _deps/glm-build/glm/CMakeFiles/glm.dir/detail
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target glm
+
+
+#############################################
+# Link the static library _deps/glm-build/glm/libglm.a
+
+build _deps/glm-build/glm/libglm.a: CXX_STATIC_LIBRARY_LINKER__glm_Debug _deps/glm-build/glm/CMakeFiles/glm.dir/detail/glm.cpp.o
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = _deps/glm-build/glm/CMakeFiles/glm.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = _deps/glm-build/glm/libglm.a
+  TARGET_PDB = glm.a.dbg
+
+
+#############################################
+# Utility command for test
+
+build _deps/glm-build/glm/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/glm && /opt/cmake/bin/ctest
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps/glm-build/glm/test: phony _deps/glm-build/glm/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/glm-build/glm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/glm && /opt/cmake/bin/ccmake -S/home/bwallis/projects/walliscode/2d_projection_generator -B/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build _deps/glm-build/glm/edit_cache: phony _deps/glm-build/glm/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/glm-build/glm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/glm && /opt/cmake/bin/cmake --regenerate-during-build -S/home/bwallis/projects/walliscode/2d_projection_generator -B/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/glm-build/glm/rebuild_cache: phony _deps/glm-build/glm/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/glm-build/glm/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/glm-build/glm/CMakeFiles/install.util: CUSTOM_COMMAND _deps/glm-build/glm/all
+  COMMAND = cd /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/glm && /opt/cmake/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/glm-build/glm/install: phony _deps/glm-build/glm/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/glm-build/glm/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/glm-build/glm/all
+  COMMAND = cd /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/glm && /opt/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/glm-build/glm/install/local: phony _deps/glm-build/glm/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/glm-build/glm/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/glm-build/glm/all
+  COMMAND = cd /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/glm && /opt/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/glm-build/glm/install/strip: phony _deps/glm-build/glm/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
 # /home/bwallis/projects/walliscode/2d_projection_generator/CMakeLists.txt
 # =============================================================================
 
@@ -2089,14 +2289,14 @@ build src/data_loader/install/strip: phony src/data_loader/CMakeFiles/install/st
 #############################################
 # Order-only phony target for structures
 
-build cmake_object_order_depends_target_structures: phony || cmake_object_order_depends_target_sfml-graphics cmake_object_order_depends_target_sfml-system cmake_object_order_depends_target_sfml-window
+build cmake_object_order_depends_target_structures: phony || cmake_object_order_depends_target_glm cmake_object_order_depends_target_sfml-graphics cmake_object_order_depends_target_sfml-system cmake_object_order_depends_target_sfml-window
 
 build src/structures/CMakeFiles/structures.dir/Vertex3.cpp.o.ddi: CXX_SCAN__structures_Debug /home/bwallis/projects/walliscode/2d_projection_generator/src/structures/Vertex3.cpp || cmake_object_order_depends_target_structures
   DEFINES = -DSFML_STATIC
   DEP_FILE = src/structures/CMakeFiles/structures.dir/Vertex3.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = src/structures/CMakeFiles/structures.dir/Vertex3.cpp.o.ddi
   FLAGS = -g -std=gnu++23
-  INCLUDES = -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include
+  INCLUDES = -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -I/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include
   OBJ_FILE = src/structures/CMakeFiles/structures.dir/Vertex3.cpp.o
   PREPROCESSED_OUTPUT_FILE = src/structures/CMakeFiles/structures.dir/Vertex3.cpp.o.ddi.i
 
@@ -2106,7 +2306,7 @@ build src/structures/CMakeFiles/structures.dir/Vertex3.cpp.o: CXX_COMPILER__stru
   DEP_FILE = src/structures/CMakeFiles/structures.dir/Vertex3.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = src/structures/CMakeFiles/structures.dir/Vertex3.cpp.o.modmap
   FLAGS = -g -std=gnu++23
-  INCLUDES = -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include
+  INCLUDES = -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -I/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include
   OBJECT_DIR = src/structures/CMakeFiles/structures.dir
   OBJECT_FILE_DIR = src/structures/CMakeFiles/structures.dir
   dyndep = src/structures/CMakeFiles/structures.dir/CXX.dd
@@ -2116,7 +2316,7 @@ build src/structures/CMakeFiles/structures.dir/Fragment3D.cpp.o.ddi: CXX_SCAN__s
   DEP_FILE = src/structures/CMakeFiles/structures.dir/Fragment3D.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = src/structures/CMakeFiles/structures.dir/Fragment3D.cpp.o.ddi
   FLAGS = -g -std=gnu++23
-  INCLUDES = -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include
+  INCLUDES = -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -I/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include
   OBJ_FILE = src/structures/CMakeFiles/structures.dir/Fragment3D.cpp.o
   PREPROCESSED_OUTPUT_FILE = src/structures/CMakeFiles/structures.dir/Fragment3D.cpp.o.ddi.i
 
@@ -2126,7 +2326,7 @@ build src/structures/CMakeFiles/structures.dir/Fragment3D.cpp.o: CXX_COMPILER__s
   DEP_FILE = src/structures/CMakeFiles/structures.dir/Fragment3D.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = src/structures/CMakeFiles/structures.dir/Fragment3D.cpp.o.modmap
   FLAGS = -g -std=gnu++23
-  INCLUDES = -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include
+  INCLUDES = -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -I/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include
   OBJECT_DIR = src/structures/CMakeFiles/structures.dir
   OBJECT_FILE_DIR = src/structures/CMakeFiles/structures.dir
   dyndep = src/structures/CMakeFiles/structures.dir/CXX.dd
@@ -2141,7 +2341,7 @@ build src/structures/CMakeFiles/structures.dir/CXX.dd | /home/bwallis/projects/w
 #############################################
 # Link the static library src/structures/libstructures.a
 
-build src/structures/libstructures.a: CXX_STATIC_LIBRARY_LINKER__structures_Debug src/structures/CMakeFiles/structures.dir/Vertex3.cpp.o src/structures/CMakeFiles/structures.dir/Fragment3D.cpp.o || _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a
+build src/structures/libstructures.a: CXX_STATIC_LIBRARY_LINKER__structures_Debug src/structures/CMakeFiles/structures.dir/Vertex3.cpp.o src/structures/CMakeFiles/structures.dir/Fragment3D.cpp.o || _deps/glm-build/glm/libglm.a _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a
   CONFIG = Debug
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = src/structures/CMakeFiles/structures.dir
@@ -2240,14 +2440,14 @@ build src/structures/install/strip: phony src/structures/CMakeFiles/install/stri
 #############################################
 # Order-only phony target for projections
 
-build cmake_object_order_depends_target_projections: phony || cmake_object_order_depends_target_sfml-graphics cmake_object_order_depends_target_sfml-system cmake_object_order_depends_target_sfml-window cmake_object_order_depends_target_structures
+build cmake_object_order_depends_target_projections: phony || cmake_object_order_depends_target_glm cmake_object_order_depends_target_sfml-graphics cmake_object_order_depends_target_sfml-system cmake_object_order_depends_target_sfml-window cmake_object_order_depends_target_structures
 
 build src/projection/CMakeFiles/projections.dir/Projector.cpp.o.ddi: CXX_SCAN__projections_Debug /home/bwallis/projects/walliscode/2d_projection_generator/src/projection/Projector.cpp || cmake_object_order_depends_target_projections
   DEFINES = -DSFML_STATIC
   DEP_FILE = src/projection/CMakeFiles/projections.dir/Projector.cpp.o.ddi.d
   DYNDEP_INTERMEDIATE_FILE = src/projection/CMakeFiles/projections.dir/Projector.cpp.o.ddi
   FLAGS = -g -std=gnu++23
-  INCLUDES = -I/home/bwallis/projects/walliscode/2d_projection_generator/src/projection -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include
+  INCLUDES = -I/home/bwallis/projects/walliscode/2d_projection_generator/src/projection -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -I/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include
   OBJ_FILE = src/projection/CMakeFiles/projections.dir/Projector.cpp.o
   PREPROCESSED_OUTPUT_FILE = src/projection/CMakeFiles/projections.dir/Projector.cpp.o.ddi.i
 
@@ -2257,7 +2457,7 @@ build src/projection/CMakeFiles/projections.dir/Projector.cpp.o: CXX_COMPILER__p
   DEP_FILE = src/projection/CMakeFiles/projections.dir/Projector.cpp.o.d
   DYNDEP_MODULE_MAP_FILE = src/projection/CMakeFiles/projections.dir/Projector.cpp.o.modmap
   FLAGS = -g -std=gnu++23
-  INCLUDES = -I/home/bwallis/projects/walliscode/2d_projection_generator/src/projection -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include
+  INCLUDES = -I/home/bwallis/projects/walliscode/2d_projection_generator/src/projection -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -I/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include
   OBJECT_DIR = src/projection/CMakeFiles/projections.dir
   OBJECT_FILE_DIR = src/projection/CMakeFiles/projections.dir
   dyndep = src/projection/CMakeFiles/projections.dir/CXX.dd
@@ -2272,7 +2472,7 @@ build src/projection/CMakeFiles/projections.dir/CXX.dd | /home/bwallis/projects/
 #############################################
 # Link the static library src/projection/libprojections.a
 
-build src/projection/libprojections.a: CXX_STATIC_LIBRARY_LINKER__projections_Debug src/projection/CMakeFiles/projections.dir/Projector.cpp.o || _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a src/structures/libstructures.a
+build src/projection/libprojections.a: CXX_STATIC_LIBRARY_LINKER__projections_Debug src/projection/CMakeFiles/projections.dir/Projector.cpp.o || _deps/glm-build/glm/libglm.a _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a src/structures/libstructures.a
   CONFIG = Debug
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = src/projection/CMakeFiles/projections.dir
@@ -2364,7 +2564,11 @@ build src/projection/install/strip: phony src/projection/CMakeFiles/install/stri
 
 build data_loader: phony src/data_loader/libdata_loader.a
 
+build glm: phony _deps/glm-build/glm/libglm.a
+
 build libdata_loader.a: phony src/data_loader/libdata_loader.a
+
+build libglm.a: phony _deps/glm-build/glm/libglm.a
 
 build libprojections.a: phony src/projection/libprojections.a
 
@@ -2404,7 +2608,21 @@ build structures: phony src/structures/libstructures.a
 #############################################
 # Folder: /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug
 
-build codegen: phony projection_generator/codegen src/codegen
+build codegen: phony _deps/glm-build/codegen projection_generator/codegen src/codegen
+
+# =============================================================================
+
+#############################################
+# Folder: /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build
+
+build _deps/glm-build/codegen: phony _deps/glm-build/glm/codegen
+
+# =============================================================================
+
+#############################################
+# Folder: /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/glm
+
+build _deps/glm-build/glm/codegen: phony
 
 # =============================================================================
 
@@ -2495,7 +2713,21 @@ build src/structures/codegen: phony
 #############################################
 # Folder: /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug
 
-build all: phony projection_generator/all src/all
+build all: phony _deps/glm-build/all projection_generator/all src/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build
+
+build _deps/glm-build/all: phony _deps/glm-build/glm/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/glm
+
+build _deps/glm-build/glm/all: phony _deps/glm-build/glm/libglm.a
 
 # =============================================================================
 
@@ -2588,14 +2820,14 @@ build src/structures/all: phony src/structures/libstructures.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/System/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Window/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Network/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Graphics/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Audio/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/projection_generator/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/data_loader/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/structures/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/projection/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/System/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Window/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Network/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Graphics/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Audio/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/projection_generator/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/data_loader/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/structures/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/projection/CTestTestfile.cmake: RERUN_CMAKE | /home/bwallis/projects/walliscode/2d_projection_generator/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/SFML.cmake /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/fetch_content_modules.cmake /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/happly.cmake /home/bwallis/projects/walliscode/2d_projection_generator/projection_generator/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/data_loader/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/projection/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/structures/CMakeLists.txt /opt/cmake/share/cmake-4.0/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /opt/cmake/share/cmake-4.0/Modules/CMakeCInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeCXXInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeGenericSystem.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakePackageConfigHelpers.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeParseArguments.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake /opt/cmake/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake /opt/cmake/share/cmake-4.0/Modules/CheckFunctionExists.cmake /opt/cmake/share/cmake-4.0/Modules/CheckIncludeFile.cmake /opt/cmake/share/cmake-4.0/Modules/CheckLibraryExists.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/Clang-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/Clang.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/GNU.cmake /opt/cmake/share/cmake-4.0/Modules/ExternalProject/PatchInfo.txt.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/RepositoryInfo.txt.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/UpdateInfo.txt.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/gitclone.cmake.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/gitupdate.cmake.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/shared_internal_commands.cmake /opt/cmake/share/cmake-4.0/Modules/ExternalProject/stepscript.cmake.in /opt/cmake/share/cmake-4.0/Modules/FetchContent.cmake /opt/cmake/share/cmake-4.0/Modules/FindFontconfig.cmake /opt/cmake/share/cmake-4.0/Modules/FindFreetype.cmake /opt/cmake/share/cmake-4.0/Modules/FindGit.cmake /opt/cmake/share/cmake-4.0/Modules/FindOpenGL.cmake /opt/cmake/share/cmake-4.0/Modules/FindPackageHandleStandardArgs.cmake /opt/cmake/share/cmake-4.0/Modules/FindPackageMessage.cmake /opt/cmake/share/cmake-4.0/Modules/FindPkgConfig.cmake /opt/cmake/share/cmake-4.0/Modules/FindThreads.cmake /opt/cmake/share/cmake-4.0/Modules/FindX11.cmake /opt/cmake/share/cmake-4.0/Modules/GNUInstallDirs.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake /opt/cmake/share/cmake-4.0/Modules/Linker/GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Linker/GNU-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Linker/GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/Linux-GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/Linux-GNU-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/Linux-GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-Clang-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-GNU-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-Initialize.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/UnixPaths.cmake /opt/cmake/share/cmake-4.0/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeCXXCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake _deps/sfml-src/CMakeLists.txt _deps/sfml-src/cmake/CompilerWarnings.cmake _deps/sfml-src/cmake/Config.cmake _deps/sfml-src/cmake/Macros.cmake _deps/sfml-src/cmake/Modules/FindFLAC.cmake _deps/sfml-src/cmake/Modules/FindFreetype.cmake _deps/sfml-src/cmake/Modules/FindUDev.cmake _deps/sfml-src/cmake/Modules/FindVorbis.cmake _deps/sfml-src/cmake/SFMLConfig.cmake.in _deps/sfml-src/src/SFML/Audio/CMakeLists.txt _deps/sfml-src/src/SFML/Audio/Dependencies.cmake.in _deps/sfml-src/src/SFML/CMakeLists.txt _deps/sfml-src/src/SFML/Graphics/CMakeLists.txt _deps/sfml-src/src/SFML/Graphics/Dependencies.cmake.in _deps/sfml-src/src/SFML/Network/CMakeLists.txt _deps/sfml-src/src/SFML/System/CMakeLists.txt _deps/sfml-src/src/SFML/System/Dependencies.cmake.in _deps/sfml-src/src/SFML/Window/CMakeLists.txt _deps/sfml-src/src/SFML/Window/Dependencies.cmake.in _deps/sfml-src/tools/pkg-config/sfml-all.pc.in _deps/sfml-src/tools/pkg-config/sfml-audio.pc.in _deps/sfml-src/tools/pkg-config/sfml-graphics.pc.in _deps/sfml-src/tools/pkg-config/sfml-network.pc.in _deps/sfml-src/tools/pkg-config/sfml-system.pc.in _deps/sfml-src/tools/pkg-config/sfml-window.pc.in
+build build.ninja /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/System/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Window/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Network/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Graphics/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Audio/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/glm/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/projection_generator/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/data_loader/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/structures/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/projection/cmake_install.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/System/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Window/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Network/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Graphics/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-build/src/SFML/Audio/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/glm/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/projection_generator/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/data_loader/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/structures/CTestTestfile.cmake /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/projection/CTestTestfile.cmake: RERUN_CMAKE | /home/bwallis/projects/walliscode/2d_projection_generator/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/SFML.cmake /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/fetch_content_modules.cmake /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/glm.cmake /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/happly.cmake /home/bwallis/projects/walliscode/2d_projection_generator/projection_generator/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/data_loader/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/projection/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/structures/CMakeLists.txt /opt/cmake/share/cmake-4.0/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /opt/cmake/share/cmake-4.0/Modules/CMakeCInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeCXXInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeGenericSystem.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakePackageConfigHelpers.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeParseArguments.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake /opt/cmake/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake /opt/cmake/share/cmake-4.0/Modules/CheckFunctionExists.cmake /opt/cmake/share/cmake-4.0/Modules/CheckIncludeFile.cmake /opt/cmake/share/cmake-4.0/Modules/CheckLibraryExists.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/Clang-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/Clang.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/GNU.cmake /opt/cmake/share/cmake-4.0/Modules/ExternalProject/PatchInfo.txt.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/RepositoryInfo.txt.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/UpdateInfo.txt.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/gitclone.cmake.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/gitupdate.cmake.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/shared_internal_commands.cmake /opt/cmake/share/cmake-4.0/Modules/ExternalProject/stepscript.cmake.in /opt/cmake/share/cmake-4.0/Modules/FetchContent.cmake /opt/cmake/share/cmake-4.0/Modules/FindFontconfig.cmake /opt/cmake/share/cmake-4.0/Modules/FindFreetype.cmake /opt/cmake/share/cmake-4.0/Modules/FindGit.cmake /opt/cmake/share/cmake-4.0/Modules/FindOpenGL.cmake /opt/cmake/share/cmake-4.0/Modules/FindPackageHandleStandardArgs.cmake /opt/cmake/share/cmake-4.0/Modules/FindPackageMessage.cmake /opt/cmake/share/cmake-4.0/Modules/FindPkgConfig.cmake /opt/cmake/share/cmake-4.0/Modules/FindThreads.cmake /opt/cmake/share/cmake-4.0/Modules/FindX11.cmake /opt/cmake/share/cmake-4.0/Modules/GNUInstallDirs.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake /opt/cmake/share/cmake-4.0/Modules/Linker/GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Linker/GNU-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Linker/GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/Linux-GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/Linux-GNU-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/Linux-GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-Clang-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-GNU-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-Initialize.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/UnixPaths.cmake /opt/cmake/share/cmake-4.0/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeCXXCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake _deps/glm-src/CMakeLists.txt _deps/glm-src/glm/CMakeLists.txt _deps/sfml-src/CMakeLists.txt _deps/sfml-src/cmake/CompilerWarnings.cmake _deps/sfml-src/cmake/Config.cmake _deps/sfml-src/cmake/Macros.cmake _deps/sfml-src/cmake/Modules/FindFLAC.cmake _deps/sfml-src/cmake/Modules/FindFreetype.cmake _deps/sfml-src/cmake/Modules/FindUDev.cmake _deps/sfml-src/cmake/Modules/FindVorbis.cmake _deps/sfml-src/cmake/SFMLConfig.cmake.in _deps/sfml-src/src/SFML/Audio/CMakeLists.txt _deps/sfml-src/src/SFML/Audio/Dependencies.cmake.in _deps/sfml-src/src/SFML/CMakeLists.txt _deps/sfml-src/src/SFML/Graphics/CMakeLists.txt _deps/sfml-src/src/SFML/Graphics/Dependencies.cmake.in _deps/sfml-src/src/SFML/Network/CMakeLists.txt _deps/sfml-src/src/SFML/System/CMakeLists.txt _deps/sfml-src/src/SFML/System/Dependencies.cmake.in _deps/sfml-src/src/SFML/Window/CMakeLists.txt _deps/sfml-src/src/SFML/Window/Dependencies.cmake.in _deps/sfml-src/tools/pkg-config/sfml-all.pc.in _deps/sfml-src/tools/pkg-config/sfml-audio.pc.in _deps/sfml-src/tools/pkg-config/sfml-graphics.pc.in _deps/sfml-src/tools/pkg-config/sfml-network.pc.in _deps/sfml-src/tools/pkg-config/sfml-system.pc.in _deps/sfml-src/tools/pkg-config/sfml-window.pc.in
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/bwallis/projects/walliscode/2d_projection_generator/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/SFML.cmake /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/fetch_content_modules.cmake /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/happly.cmake /home/bwallis/projects/walliscode/2d_projection_generator/projection_generator/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/data_loader/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/projection/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/structures/CMakeLists.txt /opt/cmake/share/cmake-4.0/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /opt/cmake/share/cmake-4.0/Modules/CMakeCInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeCXXInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeGenericSystem.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakePackageConfigHelpers.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeParseArguments.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake /opt/cmake/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake /opt/cmake/share/cmake-4.0/Modules/CheckFunctionExists.cmake /opt/cmake/share/cmake-4.0/Modules/CheckIncludeFile.cmake /opt/cmake/share/cmake-4.0/Modules/CheckLibraryExists.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/Clang-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/Clang.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/GNU.cmake /opt/cmake/share/cmake-4.0/Modules/ExternalProject/PatchInfo.txt.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/RepositoryInfo.txt.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/UpdateInfo.txt.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/gitclone.cmake.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/gitupdate.cmake.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/shared_internal_commands.cmake /opt/cmake/share/cmake-4.0/Modules/ExternalProject/stepscript.cmake.in /opt/cmake/share/cmake-4.0/Modules/FetchContent.cmake /opt/cmake/share/cmake-4.0/Modules/FindFontconfig.cmake /opt/cmake/share/cmake-4.0/Modules/FindFreetype.cmake /opt/cmake/share/cmake-4.0/Modules/FindGit.cmake /opt/cmake/share/cmake-4.0/Modules/FindOpenGL.cmake /opt/cmake/share/cmake-4.0/Modules/FindPackageHandleStandardArgs.cmake /opt/cmake/share/cmake-4.0/Modules/FindPackageMessage.cmake /opt/cmake/share/cmake-4.0/Modules/FindPkgConfig.cmake /opt/cmake/share/cmake-4.0/Modules/FindThreads.cmake /opt/cmake/share/cmake-4.0/Modules/FindX11.cmake /opt/cmake/share/cmake-4.0/Modules/GNUInstallDirs.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake /opt/cmake/share/cmake-4.0/Modules/Linker/GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Linker/GNU-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Linker/GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/Linux-GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/Linux-GNU-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/Linux-GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-Clang-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-GNU-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-Initialize.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/UnixPaths.cmake /opt/cmake/share/cmake-4.0/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeCXXCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake _deps/sfml-src/CMakeLists.txt _deps/sfml-src/cmake/CompilerWarnings.cmake _deps/sfml-src/cmake/Config.cmake _deps/sfml-src/cmake/Macros.cmake _deps/sfml-src/cmake/Modules/FindFLAC.cmake _deps/sfml-src/cmake/Modules/FindFreetype.cmake _deps/sfml-src/cmake/Modules/FindUDev.cmake _deps/sfml-src/cmake/Modules/FindVorbis.cmake _deps/sfml-src/cmake/SFMLConfig.cmake.in _deps/sfml-src/src/SFML/Audio/CMakeLists.txt _deps/sfml-src/src/SFML/Audio/Dependencies.cmake.in _deps/sfml-src/src/SFML/CMakeLists.txt _deps/sfml-src/src/SFML/Graphics/CMakeLists.txt _deps/sfml-src/src/SFML/Graphics/Dependencies.cmake.in _deps/sfml-src/src/SFML/Network/CMakeLists.txt _deps/sfml-src/src/SFML/System/CMakeLists.txt _deps/sfml-src/src/SFML/System/Dependencies.cmake.in _deps/sfml-src/src/SFML/Window/CMakeLists.txt _deps/sfml-src/src/SFML/Window/Dependencies.cmake.in _deps/sfml-src/tools/pkg-config/sfml-all.pc.in _deps/sfml-src/tools/pkg-config/sfml-audio.pc.in _deps/sfml-src/tools/pkg-config/sfml-graphics.pc.in _deps/sfml-src/tools/pkg-config/sfml-network.pc.in _deps/sfml-src/tools/pkg-config/sfml-system.pc.in _deps/sfml-src/tools/pkg-config/sfml-window.pc.in: phony
+build /home/bwallis/projects/walliscode/2d_projection_generator/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/SFML.cmake /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/fetch_content_modules.cmake /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/glm.cmake /home/bwallis/projects/walliscode/2d_projection_generator/cmake/FetchContentModules/happly.cmake /home/bwallis/projects/walliscode/2d_projection_generator/projection_generator/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/data_loader/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/projection/CMakeLists.txt /home/bwallis/projects/walliscode/2d_projection_generator/src/structures/CMakeLists.txt /opt/cmake/share/cmake-4.0/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /opt/cmake/share/cmake-4.0/Modules/CMakeCInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeCXXInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeGenericSystem.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakePackageConfigHelpers.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeParseArguments.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake /opt/cmake/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake /opt/cmake/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake /opt/cmake/share/cmake-4.0/Modules/CheckFunctionExists.cmake /opt/cmake/share/cmake-4.0/Modules/CheckIncludeFile.cmake /opt/cmake/share/cmake-4.0/Modules/CheckLibraryExists.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/Clang-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/Clang.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Compiler/GNU.cmake /opt/cmake/share/cmake-4.0/Modules/ExternalProject/PatchInfo.txt.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/RepositoryInfo.txt.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/UpdateInfo.txt.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/gitclone.cmake.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/gitupdate.cmake.in /opt/cmake/share/cmake-4.0/Modules/ExternalProject/shared_internal_commands.cmake /opt/cmake/share/cmake-4.0/Modules/ExternalProject/stepscript.cmake.in /opt/cmake/share/cmake-4.0/Modules/FetchContent.cmake /opt/cmake/share/cmake-4.0/Modules/FindFontconfig.cmake /opt/cmake/share/cmake-4.0/Modules/FindFreetype.cmake /opt/cmake/share/cmake-4.0/Modules/FindGit.cmake /opt/cmake/share/cmake-4.0/Modules/FindOpenGL.cmake /opt/cmake/share/cmake-4.0/Modules/FindPackageHandleStandardArgs.cmake /opt/cmake/share/cmake-4.0/Modules/FindPackageMessage.cmake /opt/cmake/share/cmake-4.0/Modules/FindPkgConfig.cmake /opt/cmake/share/cmake-4.0/Modules/FindThreads.cmake /opt/cmake/share/cmake-4.0/Modules/FindX11.cmake /opt/cmake/share/cmake-4.0/Modules/GNUInstallDirs.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/cmake/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake /opt/cmake/share/cmake-4.0/Modules/Linker/GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Linker/GNU-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Linker/GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/Linux-GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/Linux-GNU-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linker/Linux-GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-Clang-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-GNU-C.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-GNU-CXX.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-GNU.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux-Initialize.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/Linux.cmake /opt/cmake/share/cmake-4.0/Modules/Platform/UnixPaths.cmake /opt/cmake/share/cmake-4.0/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeCXXCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake _deps/glm-src/CMakeLists.txt _deps/glm-src/glm/CMakeLists.txt _deps/sfml-src/CMakeLists.txt _deps/sfml-src/cmake/CompilerWarnings.cmake _deps/sfml-src/cmake/Config.cmake _deps/sfml-src/cmake/Macros.cmake _deps/sfml-src/cmake/Modules/FindFLAC.cmake _deps/sfml-src/cmake/Modules/FindFreetype.cmake _deps/sfml-src/cmake/Modules/FindUDev.cmake _deps/sfml-src/cmake/Modules/FindVorbis.cmake _deps/sfml-src/cmake/SFMLConfig.cmake.in _deps/sfml-src/src/SFML/Audio/CMakeLists.txt _deps/sfml-src/src/SFML/Audio/Dependencies.cmake.in _deps/sfml-src/src/SFML/CMakeLists.txt _deps/sfml-src/src/SFML/Graphics/CMakeLists.txt _deps/sfml-src/src/SFML/Graphics/Dependencies.cmake.in _deps/sfml-src/src/SFML/Network/CMakeLists.txt _deps/sfml-src/src/SFML/System/CMakeLists.txt _deps/sfml-src/src/SFML/System/Dependencies.cmake.in _deps/sfml-src/src/SFML/Window/CMakeLists.txt _deps/sfml-src/src/SFML/Window/Dependencies.cmake.in _deps/sfml-src/tools/pkg-config/sfml-all.pc.in _deps/sfml-src/tools/pkg-config/sfml-audio.pc.in _deps/sfml-src/tools/pkg-config/sfml-graphics.pc.in _deps/sfml-src/tools/pkg-config/sfml-network.pc.in _deps/sfml-src/tools/pkg-config/sfml-system.pc.in _deps/sfml-src/tools/pkg-config/sfml-window.pc.in: phony
 
 
 #############################################
