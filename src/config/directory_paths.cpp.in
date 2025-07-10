@@ -1,0 +1,6 @@
+
+#include "directory_paths.h"
+#include <filesystem>
+
+////////////////////////////////////////////////////////////
+const std::filesystem::path getDataFolder() { return "@data_path@"; };
