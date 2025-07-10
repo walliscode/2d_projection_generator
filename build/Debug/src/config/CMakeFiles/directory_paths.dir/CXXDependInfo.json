@@ -1,0 +1,30 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "Clang",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/config",
+	"dir-cur-src" : "/home/bwallis/projects/walliscode/2d_projection_generator/src/config",
+	"dir-top-bld" : "/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug",
+	"dir-top-src" : "/home/bwallis/projects/walliscode/2d_projection_generator",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"/home/bwallis/projects/walliscode/2d_projection_generator/src/config"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/config/CMakeFiles/directory_paths.dir",
+	"sources" : 
+	{
+		"src/config/CMakeFiles/directory_paths.dir/directory_paths.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/config/directory_paths.cpp"
+		}
+	}
+}

@@ -16,6 +16,11 @@
 
 namespace projection_generator {
 
+Fragment3D::Fragment3D(happly::PLYData &data) {
+
+  // Configure the fragment from the PLY data
+  ConfigureFromPlyFile(data);
+}
 /////////////////////////////////////////////////
 void Fragment3D::ConfigureFromPlyFile(happly::PLYData &data) {
 
@@ -64,5 +69,10 @@ void Fragment3D::ConfigureFromPlyFile(happly::PLYData &data) {
 /////////////////////////////////////////////////
 const std::vector<Vertex3> &Fragment3D::GetVertices() const {
   return m_vertices;
+}
+
+/////////////////////////////////////////////////
+const std::vector<std::array<size_t, 3>> &Fragment3D::GetTriangles() const {
+  return m_triangles;
 }
 } // namespace projection_generator

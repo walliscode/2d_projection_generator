@@ -1,0 +1,9 @@
+{
+  "revision": 0,
+  "rules": [
+    {
+      "primary-output": "projection_generator/CMakeFiles/projection_generator.dir/main.cpp.o"
+    }
+  ],
+  "version": 1
+}

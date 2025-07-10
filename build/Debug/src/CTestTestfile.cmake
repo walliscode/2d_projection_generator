@@ -4,6 +4,7 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
+subdirs("config")
 subdirs("data_loader")
 subdirs("structures")
-subdirs("projection")
+subdirs("projections")

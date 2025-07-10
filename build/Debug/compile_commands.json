@@ -607,9 +607,15 @@
 },
 {
   "directory": "/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug",
-  "command": "/usr/bin/clang++ -DSFML_STATIC -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include -g -std=gnu++23 @projection_generator/CMakeFiles/projection_generator.dir/main.cpp.o.modmap -o projection_generator/CMakeFiles/projection_generator.dir/main.cpp.o -c /home/bwallis/projects/walliscode/2d_projection_generator/projection_generator/main.cpp",
+  "command": "/usr/bin/clang++ -DSFML_STATIC -I/home/bwallis/projects/walliscode/2d_projection_generator/src/projections -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -I/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src -I/home/bwallis/projects/walliscode/2d_projection_generator/src/data_loader -I/home/bwallis/projects/walliscode/2d_projection_generator/src/config -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include -g -std=gnu++23 @projection_generator/CMakeFiles/projection_generator.dir/main.cpp.o.modmap -o projection_generator/CMakeFiles/projection_generator.dir/main.cpp.o -c /home/bwallis/projects/walliscode/2d_projection_generator/projection_generator/main.cpp",
   "file": "/home/bwallis/projects/walliscode/2d_projection_generator/projection_generator/main.cpp",
   "output": "projection_generator/CMakeFiles/projection_generator.dir/main.cpp.o"
+},
+{
+  "directory": "/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug",
+  "command": "/usr/bin/clang++ -I/home/bwallis/projects/walliscode/2d_projection_generator/src/config -g -std=gnu++23 @src/config/CMakeFiles/directory_paths.dir/directory_paths.cpp.o.modmap -o src/config/CMakeFiles/directory_paths.dir/directory_paths.cpp.o -c /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/config/directory_paths.cpp",
+  "file": "/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/config/directory_paths.cpp",
+  "output": "src/config/CMakeFiles/directory_paths.dir/directory_paths.cpp.o"
 },
 {
   "directory": "/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug",
@@ -631,8 +637,8 @@
 },
 {
   "directory": "/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug",
-  "command": "/usr/bin/clang++ -DSFML_STATIC -I/home/bwallis/projects/walliscode/2d_projection_generator/src/projection -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -I/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include -g -std=gnu++23 @src/projection/CMakeFiles/projections.dir/Projector.cpp.o.modmap -o src/projection/CMakeFiles/projections.dir/Projector.cpp.o -c /home/bwallis/projects/walliscode/2d_projection_generator/src/projection/Projector.cpp",
-  "file": "/home/bwallis/projects/walliscode/2d_projection_generator/src/projection/Projector.cpp",
-  "output": "src/projection/CMakeFiles/projections.dir/Projector.cpp.o"
+  "command": "/usr/bin/clang++ -DSFML_STATIC -I/home/bwallis/projects/walliscode/2d_projection_generator/src/projections -I/home/bwallis/projects/walliscode/2d_projection_generator/src/structures -I/home/bwallis/projects/walliscode/2d_projection_generator/include/happly -I/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src -isystem /home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include -g -std=gnu++23 @src/projections/CMakeFiles/projections.dir/Projector.cpp.o.modmap -o src/projections/CMakeFiles/projections.dir/Projector.cpp.o -c /home/bwallis/projects/walliscode/2d_projection_generator/src/projections/Projector.cpp",
+  "file": "/home/bwallis/projects/walliscode/2d_projection_generator/src/projections/Projector.cpp",
+  "output": "src/projections/CMakeFiles/projections.dir/Projector.cpp.o"
 }
 ]

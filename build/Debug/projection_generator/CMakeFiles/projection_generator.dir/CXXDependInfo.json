@@ -14,6 +14,12 @@
 	"forward-modules-from-target-dirs" : [],
 	"include-dirs" : 
 	[
+		"/home/bwallis/projects/walliscode/2d_projection_generator/src/projections",
+		"/home/bwallis/projects/walliscode/2d_projection_generator/src/structures",
+		"/home/bwallis/projects/walliscode/2d_projection_generator/include/happly",
+		"_deps/glm-src",
+		"/home/bwallis/projects/walliscode/2d_projection_generator/src/data_loader",
+		"/home/bwallis/projects/walliscode/2d_projection_generator/src/config",
 		"_deps/sfml-src/include"
 	],
 	"language" : "CXX",

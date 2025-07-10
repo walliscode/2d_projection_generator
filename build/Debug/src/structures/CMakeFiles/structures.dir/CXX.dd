@@ -1,0 +1,5 @@
+ninja_dyndep_version = 1.0
+build src/structures/CMakeFiles/structures.dir/Vertex3.cpp.o: dyndep
+
+build src/structures/CMakeFiles/structures.dir/Fragment3D.cpp.o: dyndep
+

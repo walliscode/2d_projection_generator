@@ -44,6 +44,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/config/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/data_loader/cmake_install.cmake")
 endif()
 
@@ -54,7 +59,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/projection/cmake_install.cmake")
+  include("/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/projections/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT

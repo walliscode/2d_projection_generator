@@ -1,0 +1,70 @@
+{
+	"cmake" : 
+	{
+		"generator" : 
+		{
+			"multiConfig" : false,
+			"name" : "Ninja"
+		},
+		"paths" : 
+		{
+			"cmake" : "/opt/cmake/bin/cmake",
+			"cpack" : "/opt/cmake/bin/cpack",
+			"ctest" : "/opt/cmake/bin/ctest",
+			"root" : "/opt/cmake/share/cmake-4.0"
+		},
+		"version" : 
+		{
+			"isDirty" : false,
+			"major" : 4,
+			"minor" : 0,
+			"patch" : 2,
+			"string" : "4.0.2",
+			"suffix" : ""
+		}
+	},
+	"objects" : 
+	[
+		{
+			"jsonFile" : "codemodel-v2-5eee311a66eb04d61262.json",
+			"kind" : "codemodel",
+			"version" : 
+			{
+				"major" : 2,
+				"minor" : 8
+			}
+		},
+		{
+			"jsonFile" : "cmakeFiles-v1-714e672870ade0e0d9a5.json",
+			"kind" : "cmakeFiles",
+			"version" : 
+			{
+				"major" : 1,
+				"minor" : 1
+			}
+		}
+	],
+	"reply" : 
+	{
+		"cmakeFiles-v1" : 
+		{
+			"jsonFile" : "cmakeFiles-v1-714e672870ade0e0d9a5.json",
+			"kind" : "cmakeFiles",
+			"version" : 
+			{
+				"major" : 1,
+				"minor" : 1
+			}
+		},
+		"codemodel-v2" : 
+		{
+			"jsonFile" : "codemodel-v2-5eee311a66eb04d61262.json",
+			"kind" : "codemodel",
+			"version" : 
+			{
+				"major" : 2,
+				"minor" : 8
+			}
+		}
+	}
+}

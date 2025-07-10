@@ -13,9 +13,11 @@
 		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-build/glm/cmake_install.cmake",
 		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/projection_generator/cmake_install.cmake",
 		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/cmake_install.cmake",
+		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/config/cmake_install.cmake",
 		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/data_loader/cmake_install.cmake",
 		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/structures/cmake_install.cmake",
-		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/projection/cmake_install.cmake"
+		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/src/projections/cmake_install.cmake",
+		"/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/include/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

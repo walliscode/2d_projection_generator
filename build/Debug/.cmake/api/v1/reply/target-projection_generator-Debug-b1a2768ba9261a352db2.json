@@ -1,0 +1,370 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "projection_generator/projection_generator"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"set_target_properties",
+			"find_package"
+		],
+		"files" : 
+		[
+			"projection_generator/CMakeLists.txt",
+			"src/projections/CMakeLists.txt",
+			"build/Debug/_deps/sfml-src/src/SFML/Graphics/CMakeLists.txt",
+			"build/Debug/_deps/sfml-src/src/SFML/Window/CMakeLists.txt",
+			"/opt/cmake/share/cmake-4.0/Modules/FindX11.cmake",
+			"build/Debug/_deps/sfml-src/src/SFML/System/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 5,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 14,
+				"parent" : 3
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 93,
+				"parent" : 5
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 1,
+				"file" : 3,
+				"line" : 280,
+				"parent" : 7
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 279,
+				"parent" : 7
+			},
+			{
+				"file" : 4,
+				"parent" : 9
+			},
+			{
+				"command" : 2,
+				"file" : 4,
+				"line" : 1198,
+				"parent" : 10
+			},
+			{
+				"command" : 2,
+				"file" : 4,
+				"line" : 1057,
+				"parent" : 10
+			},
+			{
+				"command" : 1,
+				"file" : 3,
+				"line" : 283,
+				"parent" : 7
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 1,
+				"file" : 5,
+				"line" : 90,
+				"parent" : 14
+			},
+			{
+				"command" : 1,
+				"file" : 3,
+				"line" : 312,
+				"parent" : 7
+			},
+			{
+				"command" : 1,
+				"file" : 3,
+				"line" : 325,
+				"parent" : 7
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 156,
+				"parent" : 5
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=gnu++23"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "SFML_STATIC"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "/home/bwallis/projects/walliscode/2d_projection_generator/src/projections"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/bwallis/projects/walliscode/2d_projection_generator/src/structures"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/bwallis/projects/walliscode/2d_projection_generator/include/happly"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/glm-src"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/bwallis/projects/walliscode/2d_projection_generator/src/data_loader"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/bwallis/projects/walliscode/2d_projection_generator/src/config"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/bwallis/projects/walliscode/2d_projection_generator/build/Debug/_deps/sfml-src/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2
+				],
+				"standard" : "23"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "sfml-system::@8cb1db2982443611e568"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "sfml-window::@5730451e331e3690ae65"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "sfml-graphics::@98af38147d5fa7e70f61"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "glm::@ce54d98d7b326a3e12a8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "directory_paths::@f954cdf8d5380f57b616"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "data_loader::@3bdcbfd76268d2258902"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "structures::@39e8018059144bd64ea7"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "projections::@fe43c589d84c2853cfca"
+		}
+	],
+	"id" : "projection_generator::@cceb277a6ccf1fe821e7",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "_deps/sfml-build/lib/libsfml-graphics-s-d.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "src/projections/libprojections.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "src/structures/libstructures.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "src/data_loader/libdata_loader.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "src/config/libdirectory_paths.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "_deps/glm-build/glm/libglm.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "_deps/sfml-build/lib/libsfml-graphics-s-d.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "_deps/sfml-build/lib/libsfml-window-s-d.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/libXrandr.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/libXcursor.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 11,
+				"fragment" : "/usr/lib/libXrender.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 12,
+				"fragment" : "/usr/lib/libXfixes.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/libXi.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 11,
+				"fragment" : "/usr/lib/libXext.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/libX11.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 13,
+				"fragment" : "_deps/sfml-build/lib/libsfml-system-s-d.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "-lrt",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 16,
+				"fragment" : "/usr/lib/libGL.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 17,
+				"fragment" : "/usr/lib/libudev.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 17,
+				"fragment" : "-ldl",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 18,
+				"fragment" : "/usr/lib/libfreetype.so",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "projection_generator",
+	"nameOnDisk" : "projection_generator",
+	"paths" : 
+	{
+		"build" : "projection_generator",
+		"source" : "projection_generator"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "projection_generator/main.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
