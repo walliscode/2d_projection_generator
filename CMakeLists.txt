@@ -32,3 +32,4 @@ include(fetch_content_modules)
 
 add_subdirectory(projection_generator)
 add_subdirectory(src)
+add_subdirectory(include)

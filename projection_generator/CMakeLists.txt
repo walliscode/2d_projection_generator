@@ -4,4 +4,9 @@ main.cpp
 
 target_link_libraries(projection_generator
 PUBLIC
-SFML::Graphics)
+SFML::Graphics
+projections
+structures
+data_loader
+directory_paths
+)

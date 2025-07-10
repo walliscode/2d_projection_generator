@@ -13,10 +13,8 @@ namespace projection_generator {
 
 /////////////////////////////////////////////////
 happly::PLYData DataLoader::LoadDataFromPlyFile(const std::string &file_name) {
-  // construct file path
-  std::string ply_file = file_name + ".ply";
 
-  happly::PLYData data(ply_file);
+  happly::PLYData data(file_name);
 
   return data;
 }
