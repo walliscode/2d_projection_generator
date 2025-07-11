@@ -19,7 +19,7 @@ void Projector::RotateFragmentAboutY(const Fragment3D &fragment,
   // set variables specific to this function
   glm::vec3 rotation_axis(0.0f, 1.0f, 0.0f); // Y-axis
   glm::vec3 tilt_axis(1.0f, 0.0f, 0.0f);     // X-axis
-  float tilt_angle = 30.0f;                  // Tilt angle in degrees
+  float tilt_angle = -30.0f;                 // Tilt angle in degrees
 
   // Rotate and snapshot the fragment
   RotateAndSnapshotFragment(fragment, tilt_angle, tilt_axis, rotation_intervals,
@@ -31,8 +31,10 @@ sf::VertexArray Projector::ProjectToVertexArray(const Fragment3D &fragment,
 
   std::vector<glm::vec3> transformed;
 
+  size_t num_culled_triangles = 0;
   // Step 1: Transform all vertex positions
-  for (const auto &v : fragment.GetVertices()) {
+  const auto &vertices = fragment.GetVertices();
+  for (const auto &v : vertices) {
     glm::vec4 world = model_matrix * glm::vec4(v.m_position, 1.0f);
     transformed.push_back(glm::vec3(world)); // No projection or normalization
   }
@@ -49,11 +51,13 @@ sf::VertexArray Projector::ProjectToVertexArray(const Fragment3D &fragment,
     glm::vec2 v0 = p1 - p0;
     glm::vec2 v1 = p2 - p0;
     float cross_z = v0.x * v1.y - v0.y * v1.x;
-    if (cross_z <= 0.0f)
-      continue; // Cull clockwise triangles
+    if (cross_z <= 0.0f) {
+      num_culled_triangles++;
+      continue; // Skip this triangle if it is back-facing
+    }
 
     // Step 4: Output raw float 2D triangles with color
-    const auto &vertices = fragment.GetVertices();
+
     result.append(
         sf::Vertex(sf::Vector2f(p0.x, p0.y), vertices[tri[0]].m_color));
     result.append(
@@ -61,7 +65,10 @@ sf::VertexArray Projector::ProjectToVertexArray(const Fragment3D &fragment,
     result.append(
         sf::Vertex(sf::Vector2f(p2.x, p2.y), vertices[tri[2]].m_color));
   }
-
+  std::cout << "[DEBUG] Projector::ProjectToVertexArray: "
+            << "Culled " << num_culled_triangles << " triangles out of "
+            << fragment.GetTriangles().size() << " total triangles."
+            << std::endl;
   return result;
 }
 /////////////////////////////////////////////////
@@ -81,6 +88,9 @@ void Projector::RotateAndSnapshotFragment(const Fragment3D &fragment,
   glm::mat4 tilt =
       glm::rotate(glm::mat4(1.0f), glm::radians(tilt_angle), tilt_axis);
 
+  // add a translation to move it back to the window center
+  glm::mat4 translate_to_window_center =
+      glm::translate(glm::mat4(1.0f), glm::vec3(400.0f, 300.0f, 0.0f));
   // Rotate around the object's center at various angles
   for (size_t i = 0; i < rotation_intervals; ++i) {
     float angle = static_cast<float>(i) *
@@ -88,12 +98,18 @@ void Projector::RotateAndSnapshotFragment(const Fragment3D &fragment,
     glm::mat4 rotation =
         glm::rotate(glm::mat4(1.0f), glm::radians(angle), rotation_axis);
 
-    glm::mat4 model_matrix = rotation * tilt * translate_to_origin;
+    glm::mat4 model_matrix =
+        translate_to_window_center * rotation * tilt * translate_to_origin;
 
     sf::VertexArray projected_shape =
         ProjectToVertexArray(fragment, model_matrix);
     m_projected_shapes.push_back(projected_shape);
   }
+}
+
+/////////////////////////////////////////////////
+const std::vector<sf::VertexArray> &Projector::GetProjectedShapes() const {
+  return m_projected_shapes;
 }
 
 } // namespace projection_generator
