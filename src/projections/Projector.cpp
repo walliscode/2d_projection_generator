@@ -8,6 +8,7 @@
 #include "Projector.h"
 #include "glm/ext/matrix_transform.hpp"
 #include "glm/ext/vector_float3.hpp"
+#include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/PrimitiveType.hpp>
 #include <SFML/Graphics/Vertex.hpp>
 namespace projection_generator {
@@ -29,46 +30,51 @@ void Projector::RotateFragmentAboutY(const Fragment3D &fragment,
 sf::VertexArray Projector::ProjectToVertexArray(const Fragment3D &fragment,
                                                 const glm::mat4 &model_matrix) {
 
-  std::vector<glm::vec3> transformed;
+  std::vector<sf::Vertex> transformed;
 
   size_t num_culled_triangles = 0;
   // Step 1: Transform all vertex positions
   const auto &vertices = fragment.GetVertices();
   for (const auto &v : vertices) {
     glm::vec4 world = model_matrix * glm::vec4(v.m_position, 1.0f);
-    transformed.push_back(glm::vec3(world)); // No projection or normalization
+    transformed.push_back(
+        sf::Vertex(sf::Vector2f(world.x, world.y), sf::Color::White));
   }
 
-  sf::VertexArray result(sf::PrimitiveType::Triangles);
+  sf::VertexArray result(sf::PrimitiveType::Points);
 
-  // Step 2: For each triangle
-  for (const auto &tri : fragment.GetTriangles()) {
-    const glm::vec2 p0 = glm::vec2(transformed[tri[0]]);
-    const glm::vec2 p1 = glm::vec2(transformed[tri[1]]);
-    const glm::vec2 p2 = glm::vec2(transformed[tri[2]]);
-
-    // Step 3: Backface culling (screen-space)
-    glm::vec2 v0 = p1 - p0;
-    glm::vec2 v1 = p2 - p0;
-    float cross_z = v0.x * v1.y - v0.y * v1.x;
-    if (cross_z <= 0.0f) {
-      num_culled_triangles++;
-      continue; // Skip this triangle if it is back-facing
-    }
-
-    // Step 4: Output raw float 2D triangles with color
-
-    result.append(
-        sf::Vertex(sf::Vector2f(p0.x, p0.y), vertices[tri[0]].m_color));
-    result.append(
-        sf::Vertex(sf::Vector2f(p1.x, p1.y), vertices[tri[1]].m_color));
-    result.append(
-        sf::Vertex(sf::Vector2f(p2.x, p2.y), vertices[tri[2]].m_color));
+  // append all vertices to the result
+  for (const auto &v : transformed) {
+    result.append(v);
   }
-  std::cout << "[DEBUG] Projector::ProjectToVertexArray: "
-            << "Culled " << num_culled_triangles << " triangles out of "
-            << fragment.GetTriangles().size() << " total triangles."
-            << std::endl;
+  // // Step 2: For each triangle
+  // for (const auto &tri : fragment.GetTriangles()) {
+  //   const glm::vec2 p0 = glm::vec2(transformed[tri[0]]);
+  //   const glm::vec2 p1 = glm::vec2(transformed[tri[1]]);
+  //   const glm::vec2 p2 = glm::vec2(transformed[tri[2]]);
+  //
+  //   // Step 3: Backface culling (screen-space)
+  //   glm::vec2 v0 = p1 - p0;
+  //   glm::vec2 v1 = p2 - p0;
+  //   float cross_z = v0.x * v1.y - v0.y * v1.x;
+  //   if (cross_z <= 0.0f) {
+  //     num_culled_triangles++;
+  //     continue; // Skip this triangle if it is back-facing
+  //   }
+  //
+  //   // Step 4: Output raw float 2D triangles with color
+  //
+  //   result.append(
+  //       sf::Vertex(sf::Vector2f(p0.x, p0.y), vertices[tri[0]].m_color));
+  //   result.append(
+  //       sf::Vertex(sf::Vector2f(p1.x, p1.y), vertices[tri[1]].m_color));
+  //   result.append(
+  //       sf::Vertex(sf::Vector2f(p2.x, p2.y), vertices[tri[2]].m_color));
+  // }
+  // std::cout << "[DEBUG] Projector::ProjectToVertexArray: "
+  //           << "Culled " << num_culled_triangles << " triangles out of "
+  //           << fragment.GetTriangles().size() << " total triangles."
+  //           << std::endl;
   return result;
 }
 /////////////////////////////////////////////////

@@ -10,6 +10,7 @@
 #include "Fragment3D.h"
 #include "glm/ext/vector_float3.hpp"
 #include "happly.h"
+#include <SFML/Graphics/Color.hpp>
 #include <SFML/System/Vector3.hpp>
 #include <array>
 #include <cwchar>
@@ -25,6 +26,13 @@ Fragment3D::Fragment3D(happly::PLYData &data) {
   std::cout << "[DEBUG] Fragment3D constructor finished." << std::endl;
 }
 
+Fragment3D::Fragment3D(VoxModel &vox_data) {
+  std::cout << "[DEBUG] Fragment3D constructor called with VoxModel."
+            << std::endl;
+  // Configure the fragment from the VoxModel data
+  ConfigureFromVoxData(vox_data);
+  std::cout << "[DEBUG] Fragment3D constructor finished." << std::endl;
+}
 /////////////////////////////////////////////////
 void Fragment3D::ConfigureFromPlyFile(happly::PLYData &data) {
 
@@ -114,6 +122,31 @@ void Fragment3D::ConfigureFromPlyFile(happly::PLYData &data) {
             << std::endl;
 }
 
+/////////////////////////////////////////////////
+void Fragment3D::ConfigureFromVoxData(VoxModel &vox_data) {
+  std::cout << "[DEBUG] Configuring Fragment3D from VoxModel..." << std::endl;
+  // Clear existing vertices and triangles
+  m_vertices.clear();
+  m_triangles.clear();
+  // Iterate through voxels and create vertices
+  for (const auto &voxel : vox_data.voxels) {
+    glm::vec3 position(voxel.x, voxel.y, voxel.z);
+
+    m_vertices.emplace_back(position, voxel.color);
+  }
+  // Generate triangles from voxels
+  size_t numVoxels = vox_data.voxels.size();
+  for (size_t i = 0; i < numVoxels; ++i) {
+    if (i + 1 < numVoxels && i + 2 < numVoxels) {
+      m_triangles.push_back({i, i + 1, i + 2});
+    }
+    if (i + 1 < numVoxels && i + 2 < numVoxels) {
+      m_triangles.push_back({i, i + 2, i + 1});
+    }
+  }
+  std::cout << "[DEBUG] Finished configuring Fragment3D from VoxModel."
+            << std::endl;
+}
 /////////////////////////////////////////////////
 const std::vector<Vertex3> &Fragment3D::GetVertices() const {
   return m_vertices;

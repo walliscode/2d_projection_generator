@@ -12,6 +12,7 @@
 /// Headers
 /////////////////////////////////////////////////
 #include "Vertex3.h"
+#include "VoxModel.h"
 #include "happly.h"
 #include <array>
 #include <vector>
@@ -41,6 +42,8 @@ private:
 
   void ConfigureFromPlyFile(happly::PLYData &data);
 
+  void ConfigureFromVoxData(VoxModel &vox_data);
+
 public:
   /////////////////////////////////////////////////
   /// @brief Constructor taking a PLYData object
@@ -48,6 +51,8 @@ public:
   /// @param data [TODO:parameter]
   /////////////////////////////////////////////////
   Fragment3D(happly::PLYData &data);
+
+  Fragment3D(VoxModel &vox_data);
 
   const std::vector<Vertex3> &GetVertices() const;
 

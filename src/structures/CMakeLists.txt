@@ -1,6 +1,7 @@
 add_library(structures
 Vertex3.cpp
 Fragment3D.cpp
+VoxModel.cpp
 )
 
 target_include_directories(structures

@@ -1,53 +1,41 @@
 
-#include "DataLoader.h"
+
 #include "Fragment3D.h"
 #include "Projector.h"
+#include "VoxModel.h"
 #include "directory_paths.h"
-#include "happly.h"
-#include <filesystem>
 #include <iostream>
 int main() {
 
-  // initiate the DataLoader to read in the .ply data
-  projection_generator::DataLoader data_loader;
-  std::cout << "DataLoader initiated." << std::endl;
+  // create a VoxModel instance
+  VoxModel model;
 
-  // construct the path to the .ply file
-  std::filesystem::path ply_file = getDataFolder() / "test_cube.ply";
-  sf::VertexArray test;
-  std::cout << "Path to .ply file: " << ply_file.string() << std::endl;
+  // get path to the .vox file
+  std::filesystem::path file_path = getDataFolder() / "chr_knight.vox";
+  // load the model from a file
+  if (!loadVox(file_path.string(), model)) {
+    std::cerr << "Failed to load model." << std::endl;
+    return 1;
+  }
+  std::cout << "Model loaded successfully!" << std::endl;
 
-  happly::PLYData ply_data = data_loader.LoadDataFromPlyFile(ply_file.string());
-  std::cout << "Data loaded from .ply file." << std::endl;
+  // create a Fragment3D instance from the VoxModel
+  projection_generator::Fragment3D fragment(model);
 
-  // create a Fragment3D object from the loaded data
-  projection_generator::Fragment3D fragment{ply_data};
-  std::cout << "Fragment3D object created." << std::endl;
-
+  // create a Projector instance
   projection_generator::Projector projector;
-  std::cout << "Projector object created." << std::endl;
 
-  // // Rotate the fragment about the Y-axis with 12
+  // project the Fragment3D onto a 2D plane
   projector.RotateFragmentAboutY(fragment, 48);
 
-  // print out the number of vertex arrays produced and the size of each
-  const auto &projected_shapes = projector.GetProjectedShapes();
-  std::cout << "Number of projected shapes: " << projected_shapes.size()
+  // get the projected shapes
+  auto projected_shapes = projector.GetProjectedShapes();
+
+  // print out the number of points in the projected shapes
+  std::cout << "Projected shapes count: " << projected_shapes.size()
             << std::endl;
-  for (size_t i = 0; i < projected_shapes.size(); ++i) {
-    std::cout << "Projected shape " << i << " has "
-              << projected_shapes[i].getVertexCount() << " vertices."
-              << std::endl;
-
-    std::cout << "Projected shape size: [x: "
-              << projected_shapes[i].getBounds().size.x
-              << ", y: " << projected_shapes[i].getBounds().size.y << "]"
-              << std::endl;
-
-    // print the position of the bounds
-    std::cout << "Projected shape bounds position: [x: "
-              << projected_shapes[i].getBounds().position.x
-              << ", y: " << projected_shapes[i].getBounds().position.y << "]"
+  for (const auto &shape : projected_shapes) {
+    std::cout << "[DEBUG] Shape has " << shape.getVertexCount() << " vertices."
               << std::endl;
   }
   // create the window
@@ -55,7 +43,7 @@ int main() {
 
   // zoom in on the center of the window
   sf::View view = window.getView();
-  view.zoom(0.01f); // Zoom in
+  view.zoom(0.8f); // Zoom in
   window.setView(view);
   // set the frame rate limit
   window.setFramerateLimit(12);
